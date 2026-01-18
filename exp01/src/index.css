@@ -1,0 +1,294 @@
+:root {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    /* Classic Dark Luxury Palette */
+    --bg-color: #000000;
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    --border-color: #333333;
+    --card-bg: #0a0a0a;
+
+    --btn-bg: #000000;
+    --btn-text: #ffffff;
+    --btn-border: #ffffff;
+    --btn-hover-bg: #ffffff;
+    --btn-hover-text: #000000;
+
+    --accent-color: #ffffff;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+#root {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--text-main);
+}
+
+h2,
+h3 {
+    font-weight: 400;
+    color: var(--text-main);
+}
+
+button {
+    border-radius: 4px;
+    border: 1px solid var(--btn-border);
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+input {
+    background-color: #111;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.8em 1.2em;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-right: 0.5em;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2.5em;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    margin: 2em auto;
+    text-align: left;
+    max-width: 600px;
+}
+
+.description {
+    color: var(--text-muted);
+    margin-bottom: 1.5em;
+    font-size: 0.95em;
+}
+
+.result-box {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    background: #050505;
+    border-radius: 8px;
+    color: var(--text-main);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Calculator Specifics */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+    border: none;
+}
+
+.calc-display {
+    background-color: #000;
+    color: var(--text-main);
+    padding: 1.5rem;
+    text-align: right;
+    font-size: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.calc-btn {
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    border: 1px solid #222;
+    background-color: #111;
+    color: #888;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.calc-btn:hover {
+    background-color: #222;
+    color: #fff;
+    border-color: #444;
+}
+
+.calc-btn.primary {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+    font-weight: bold;
+}
+
+.calc-btn.primary:hover {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+.calc-btn.secondary {
+    background-color: #222;
+    color: #fff;
+}
+
+.calc-btn.wide {
+    grid-column: span 2;
+}
+
+/* Tab Container */
+.tab-container {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 20px;
+}
+
+.tab-button {
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    padding: 0.8rem 0;
+    font-weight: 500;
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button:hover {
+    color: #fff;
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.tab-button.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+}
+
+/* Game Styles */
+.game-container {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.mode-switch {
+    display: flex;
+    background: #111;
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.mode-btn {
+    flex: 1;
+    background: transparent;
+    color: #666;
+    border: none !important;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+}
+
+.mode-btn:hover {
+    color: #fff;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+.mode-btn.active {
+    background: #333;
+    color: #fff;
+}
+
+.score-badge {
+    background: #222;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #333;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.question-box {
+    margin: 1.5rem 0;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.feedback {
+    height: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.feedback.success {
+    color: #fff;
+}
+
+.feedback.error {
+    color: #666;
+}
